@@ -1,6 +1,10 @@
+package main.java;
+
 import java.util.*;
 
 public class Main {
+
+
 
     public static int[] removeNegativeNumbers(int[] num) {
         int[] output = new int[num.length];
@@ -13,7 +17,7 @@ public class Main {
         return Arrays.copyOfRange(output, 0, k);
     }
 
-    public static int[] removeDuplicates(int []s){
+    public static int[] removeDuplicates(int[] s){
         int result[] = new int[s.length], j=0;
         for (int i : s) {
             if(!isExists(result, i))
