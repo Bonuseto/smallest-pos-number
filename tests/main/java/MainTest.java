@@ -1,26 +1,8 @@
 package main.java;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-
 import static org.junit.Assert.assertArrayEquals;
 
 public class MainTest {
-
-    private Main main;
-
-    @BeforeClass
-    public static void beforeClass(){
-        System.out.println("Before MainTest.class");
-    }
-
-    @AfterClass
-    public  static void afterClass() {
-        System.out.println("After MainTest.class");
-    }
-
-
-
 
     @org.junit.Test
     public void removeNegativeNumbers() {
@@ -31,14 +13,13 @@ public class MainTest {
         assertArrayEquals(exp, out);
     }
 
-    @org.junit.Test
+   @org.junit.Test
     public void removeDuplicates() {
+        int[] input = {1,1};
+        int[] out = Main.removeDuplicates(input);
+        int[] exp = {1,0};
 
-
-
+        assertArrayEquals(exp, out);
     }
 
-    @org.junit.Test
-    public void main() {
-    }
 }

@@ -39,6 +39,7 @@ public class Main {
         System.out.println("Input: " + Arrays.toString(numArray));
         Arrays.sort(numArray);
         int[] arrayNoDup = removeDuplicates(numArray);
+        System.out.println(Arrays.toString(arrayNoDup));
         int[] clearArray = removeNegativeNumbers(arrayNoDup);
         int compare = 1;
 
