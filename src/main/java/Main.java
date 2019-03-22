@@ -1,55 +1,46 @@
 package main.java;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class Main {
+    static int compare = 1 ;
+    public static int[] removeOtiose(int[] s) {
+        //Remove duplicates from array
+        int[] result = new int[s.length];
+        int j = 0;
+        for (int i : s) {
 
+            if (!isExists(result, i)) {
+                result[j++] = i;
+                if (0 < i) {
 
+                    if (compare == i) {
+                        compare++;
+                    }
+                }
 
-    public static int[] removeNegativeNumbers(int[] num) {
-        int[] output = new int[num.length];
-        int k = 0;
-        for(int i = 0; i < num.length; i++) {
-            if(num[i] > 0) {
-                output[k++] = num[i];
             }
         }
-        return Arrays.copyOfRange(output, 0, k);
-    }
 
-    public static int[] removeDuplicates(int[] s){
-        int result[] = new int[s.length], j=0;
-        for (int i : s) {
-            if(!isExists(result, i))
-                result[j++] = i;
-        }
         return result;
     }
 
-    private static boolean isExists(int[] array, int value){
+    //Check for existing duplicates
+    private static boolean isExists(int[] array, int value) {
         for (int i : array) {
-            if(i==value)
+            if (i == value) {
                 return true;
+            }
         }
         return false;
     }
 
     public static void main(String[] args) {
-        int[] numArray = {1,1,4,0,-1,-6,10,50,2,45,90,3};
-        System.out.println("Input: " + Arrays.toString(numArray));
+
+        int[] numArray = {3,4,-1,1};
         Arrays.sort(numArray);
-        int[] arrayNoDup = removeDuplicates(numArray);
-        System.out.println(Arrays.toString(arrayNoDup));
-        int[] clearArray = removeNegativeNumbers(arrayNoDup);
-        int compare = 1;
+        removeOtiose(numArray);
+        //System.out.println("Output: " + compare);
 
-        for (int i = 0; i < clearArray.length; i++) {
-            if (compare >= clearArray[i]){
-                compare++;
-            }
-        }
-
-        System.out.println("Output: " + compare);
     }
-
 }
